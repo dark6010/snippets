@@ -1,0 +1,23 @@
+del /s /q
+rd /s /q
+xcopy /s /f
+
+
+git status
+git add .
+git commit -m "some"
+git push origin master
+
+git clone
+
+git init
+
+
+
+git remote add origin *.git
+
+git remote -v
+
+git fetch algo
+
+//toca el 21
