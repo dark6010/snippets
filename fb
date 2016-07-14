@@ -1,1 +1,5 @@
-for(t in x){for (var p in x[t].getElementsByTagName("span")[0].innerHTML.split(" ")){if(!isNaN(x[t].getElementsByTagName("span")[0].innerHTML.split(" ")[p])){console.log(x[t].getElementsByTagName("span")[0].innerHTML.split(" ")[p])}}}
+var x = document.getElementsByClassName("UFICommentBody");
+res="\n";
+verificar="\n";
+for( var t=0; t<x.length-1;t++ ){if(x[t].getElementsByTagName("span").length>0){var band = false; for (var p in x[t].getElementsByTagName("span")[0].innerHTML.split(" ")){if(!isNaN(x[t].getElementsByTagName("span")[0].innerHTML.split(" ")[p]) && x[t].getElementsByTagName("span")[0].innerHTML.split(" ")[p]>9999999 && x[t].getElementsByTagName("span")[0].innerHTML.split(" ")[p]<99999938){res+= x[t].getElementsByTagName("span")[0].innerHTML.split(" ")[p]+"\n"; band=true;}}; if(!band){verificar+= x[t].getElementsByTagName("span")[0].innerHTML +" ===="+t +"\n"}}}
+console.log(res);
