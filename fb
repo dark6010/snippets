@@ -1,0 +1,1 @@
+for(t in x){for (var p in x[t].getElementsByTagName("span")[0].innerHTML.split(" ")){if(!isNaN(x[t].getElementsByTagName("span")[0].innerHTML.split(" ")[p])){console.log(x[t].getElementsByTagName("span")[0].innerHTML.split(" ")[p])}}}
