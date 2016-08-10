@@ -10,3 +10,62 @@ app.get("/", function(request, response) {
 app.listen(3000, function() {
     console.log("Express app started on port 3000.");
 });
+-------------------------------------------
+var Mustache = require("mustache");
+var result = Mustache.render("Hi, {{first}} {{last}}!", {
+    first: "Nicolas",
+    last: "Cage"
+});
+console.log(result);
+-------------------------------------------
+var MAX = 100;
+function randomInteger() {
+    return Math.floor((Math.random() * MAX));
+}
+module.exports = randomInteger;
+-------------------------------------------
+var randomInt = require("./random-integer");
+console.log(randomInt()); // 12
+console.log(randomInt()); // 77
+console.log(randomInt()); // 8
+-------------------------------------------
+var fs = require("fs");
+var options = { encoding: "utf-8" };
+fs.readFile("myfile.txt", options, function(err, data) {
+    if (err) {
+        console.error("Error reading file!");
+        return;
+}
+console.log(data.match(/x/gi).length + " letter X's");
+});
+//numero de x en un documento
+-------------------------------------------
+var express = require("express");
+var http = require("http");
+var app = express();
+app.use(function(request, response, next) {
+    console.log("In comes a " + request.method + " to " + request.url);
+    next();
+});
+app.use(function(request, response, next) {
+    var minute = (new Date()).getMinutes();
+    if ((minute % 2) === 0) {
+        next();
+        } else {
+        response.statusCode = 403;
+        response.end("Not authorized.");
+        }
+});
+app.use(function(request, response) {
+    response.end('Secret info: the password is "swordfish"!');
+});
+--------------------------------------------
+res.download()	     Solicita un archivo para descargarlo.
+res.end()	         Finaliza el proceso de respuesta.
+res.json()	         Envía una respuesta JSON.
+res.jsonp()	         Envía una respuesta JSON con soporte JSONP.
+res.redirect()	     Redirecciona una solicitud.
+res.render()	     Representa una plantilla de vista.
+res.send()	         Envía una respuesta de varios tipos.
+res.sendFile	     Envía un archivo como una secuencia de octetos.
+res.sendStatus()	 Establece el código de estado de la respuesta y envía su representación de serie como el cuerpo de respuesta.
