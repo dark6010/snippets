@@ -1,7 +1,3 @@
-del /s /q
-rd /s /q
-xcopy /s /f
-
 
 git status
 git add .
