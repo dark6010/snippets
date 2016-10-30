@@ -12,3 +12,7 @@ select partition 1
 active
 format
 assign
+
+///
+delete partition //cuando se haya selecionado la particion
+remove //cuando se haya seleccionado la particion solo la desmonta
