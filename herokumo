@@ -1,0 +1,42 @@
+npm install -g strongloop
+slc loopback
+cd myapp
+npm install loopback-connector-mongodb --save
+//en /server/datasources.json
+{
+  "mongodb_dev": { 
+    "name": "mongodb_dev",
+    "connector": "mongodb",
+    "host": "127.0.0.1",
+    "database": "devDB",
+    "username": "devUser",
+    "password": "devPassword",
+    "port": 27017 
+  },
+  "mongodb_staging": {
+    "name": "mongodb_staging",
+    "connector": "mongodb",
+    "host": "127.0.0.1",
+    "database": "stagingDB",
+    "username": "stagingUser",
+    "password": "stagingPassword",
+    "port": 27017 
+  }
+}
+slc loopback:model
+git init
+//create Procfile in root and add
+web: slc run 
+git add .
+git commit -m "ddd"
+//previus install heroku cmd
+heroku login
+heroku apps:create --buildpack https://github.com/strongloop/strongloop-buildpacks.git
+node .
+//if work
+git push heroku master
+//later
+heroku ps
+heroku logs --tail
+heroku ps:scale web:1
+heroku ps:scale web:0
