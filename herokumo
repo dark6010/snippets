@@ -40,3 +40,4 @@ heroku ps
 heroku logs --tail
 heroku ps:scale web:1
 heroku ps:scale web:0
+https://www.codetutorial.io/loopback-and-angularjs-first-tutorial/
