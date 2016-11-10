@@ -41,3 +41,15 @@ heroku logs --tail
 heroku ps:scale web:1
 heroku ps:scale web:0
 https://www.codetutorial.io/loopback-and-angularjs-first-tutorial/
+$scope.update = function($index){
+        $scope.loading=true;
+        var todo = $scope.todos[$index];
+        Todo.replaceById(
+        {id: todo.id},
+        {
+            isDone: todo.isDone,
+            title: todo.title
+        }
+        );
+        $scope.loading=false;
+  	};
