@@ -1,0 +1,11 @@
+ apt-get install wpa_supplicant
+ cd /etc/wpa_supplicant/
+ wpa_passphrase myssid my_very_secret_passphrase>wpa_supplicant.conf
+ nano /etc/network/interfaces
+auto wlan0
+iface wlan0 inet dhcp
+    wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
+    
+iwlist
+ifconfig wlan0 up|down
+ 
