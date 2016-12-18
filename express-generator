@@ -1,0 +1,22 @@
+//all overwindows
+npm install express-generator -g
+express --view=pug myapp
+cd loquesellame
+npm install
+set DEBUG=loquesellame:* & npm start
+
+///need heroku client windows
+heroku login
+heroku config:set NODE_ENV=production
+heroku config:set NODE_ENV=development
+//add file "Procfile" and 
+web: npm start
+//return console
+git add .
+git commit -m "sss"
+git push heroku master
+heroku ps:scale web=1
+heroku open
+heroku apps:rename nuevoname
+git remote rm heroku
+heroku git:remote -a nuevoname
