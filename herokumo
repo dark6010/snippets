@@ -53,3 +53,12 @@ $scope.update = function($index){
         );
         $scope.loading=false;
   	};
+//////////////////////////
+npm i -g strongloop
+slc loopback
+
+slc run
+slc loopback:model usuario
+slc loopback:relation
+slc loopback:datasource
+npm i loopback-connecto-mongodb --save
