@@ -1,0 +1,8 @@
+$.ajax({
+    url:'http://www.corsproxy.com/' +
+        'en.wikipedia.org/wiki/Briarcliff_Manor,_New_York',
+        type:'GET',
+        success: function(data){
+           $('#content').html($(data).find('#firstHeading').html());
+        }
+});
