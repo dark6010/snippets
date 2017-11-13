@@ -1,2 +1,6 @@
 //diff from arrays
 arr1.filter(x => arr2.indexOf(x) == -1);
+//differencia simetrica
+arr1
+    .filter(x => arr2.indexOf(x) == -1)
+    .concat(arr2.filter(x => arr1.indexOf(x) == -1));
