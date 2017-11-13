@@ -1,0 +1,2 @@
+//diff from arrays
+arr1.filter(x => arr2.indexOf(x) == -1);
